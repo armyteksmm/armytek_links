@@ -7,36 +7,31 @@
   <title>ARMYTEK — Links</title>
   <style>
     :root {
-      --color-yellow: #ffcc00;
-      --color-black: #000000;
-      --color-bg: #070707;
-      --color-bg-soft: #111111;
-      --color-card: rgba(18, 18, 18, 0.86);
-      --color-text: #f7f7f7;
-      --color-muted: #d8d8d8;
+      --yellow: #ffcc00;
+      --black: #000000;
+      --bg: #070707;
+      --card: rgba(18, 18, 18, 0.86);
+      --text: #f7f7f7;
+      --muted: #d8d8d8;
       --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.48);
       --shadow-button: 0 14px 28px rgba(0, 0, 0, 0.34);
-      --radius-large: 28px;
-      --radius-button: 20px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       min-height: 100%;
-      background: var(--color-bg);
+      background: var(--bg);
     }
 
     body {
       min-height: 100svh;
       margin: 0;
       font-family: "Muller", "Arial", "Helvetica Neue", sans-serif;
-      color: var(--color-text);
+      color: var(--text);
       background:
         radial-gradient(circle at top, rgba(255, 204, 0, 0.18), transparent 34rem),
-        linear-gradient(180deg, #171717 0%, var(--color-bg-soft) 54%, #050505 100%);
+        linear-gradient(180deg, #171717 0%, #111111 54%, #050505 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -66,9 +61,9 @@
       width: min(100%, 480px);
       padding: 28px 18px 22px;
       text-align: center;
-      background: var(--color-card);
+      background: var(--card);
       border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: var(--radius-large);
+      border-radius: 28px;
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(14px);
     }
@@ -82,9 +77,8 @@
       aspect-ratio: 1 / 1;
       padding: 5px;
       margin-bottom: 18px;
-      background: var(--color-yellow);
+      background: var(--yellow);
       border-radius: 50%;
-      overflow: hidden;
       box-shadow: 0 16px 34px rgba(255, 204, 0, 0.34);
     }
 
@@ -94,14 +88,14 @@
       height: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border: 4px solid var(--color-text);
+      border: 4px solid var(--text);
       border-radius: 50%;
-      background: var(--color-black);
+      background: var(--black);
     }
 
     .brand-name {
       margin: 0;
-      color: var(--color-text);
+      color: var(--text);
       font-size: clamp(2.15rem, 10vw, 3.35rem);
       line-height: 0.95;
       font-weight: 900;
@@ -111,7 +105,7 @@
     .description {
       max-width: 390px;
       margin: 14px auto 24px;
-      color: var(--color-muted);
+      color: var(--muted);
       font-size: 1rem;
       line-height: 1.55;
     }
@@ -129,20 +123,16 @@
       width: 100%;
       min-height: 58px;
       padding: 15px 18px;
-      border: 2px solid var(--color-black);
-      border-radius: var(--radius-button);
-      color: var(--color-text);
-      background: var(--color-black);
+      border: 2px solid var(--black);
+      border-radius: 20px;
+      color: var(--text);
+      background: var(--black);
       box-shadow: var(--shadow-button);
       font-size: 1.02rem;
       font-weight: 800;
       line-height: 1.2;
       text-decoration: none;
-      transition:
-        transform 180ms ease,
-        box-shadow 180ms ease,
-        background-color 180ms ease,
-        color 180ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
     }
 
     .button-link:hover {
@@ -150,24 +140,20 @@
       box-shadow: 0 18px 30px rgba(0, 0, 0, 0.42);
     }
 
-    .button-link:active {
-      transform: translateY(-1px);
-    }
+    .button-link:active { transform: translateY(-1px); }
 
     .button-link:focus-visible {
-      outline: 3px solid var(--color-yellow);
+      outline: 3px solid var(--yellow);
       outline-offset: 4px;
     }
 
     .button-link.official {
-      color: var(--color-black);
-      background: var(--color-yellow);
+      color: var(--black);
+      background: var(--yellow);
       text-shadow: none;
     }
 
-    .button-link.official:hover {
-      background: #ffd83d;
-    }
+    .button-link.official:hover { background: #ffd83d; }
 
     .button-link.social {
       gap: 12px;
@@ -190,8 +176,8 @@
       width: 44px;
       height: 44px;
       border-radius: 15px;
-      color: var(--color-black);
-      background: var(--color-yellow);
+      color: var(--black);
+      background: var(--yellow);
     }
 
     .icon-badge svg {
@@ -203,7 +189,7 @@
 
     .tagline {
       margin: 26px 0 0;
-      color: var(--color-text);
+      color: var(--text);
       font-size: 0.98rem;
       font-weight: 900;
       letter-spacing: 0.16em;
@@ -211,32 +197,20 @@
     }
 
     @media (min-width: 520px) {
-      .page {
-        padding: 42px 24px;
-      }
-
-      .profile-card {
-        padding: 34px 28px 26px;
-      }
-
-      .button-link {
-        min-height: 62px;
-      }
+      .page { padding: 42px 24px; }
+      .profile-card { padding: 34px 28px 26px; }
+      .button-link { min-height: 62px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
       }
 
-      .button-link:hover {
-        transform: none;
-      }
+      .button-link:hover { transform: none; }
     }
   </style>
 </head>
@@ -246,12 +220,12 @@
       <div class="avatar-wrap">
         <img
           class="avatar"
-          src="https://drive.google.com/uc?export=view&amp;id=1FWp_JvWukqgim0xblCUZzlTnzwVmQjJD"
+          src="data:image/webp;base64,UklGRpoFAABXRUJQVlA4TI4FAAAvqkFqAIcgEEjhACcQSOEGF/MfFRgAeAMAA0TYBkDbBgSj/39YxXbKHtH/CcCPk6SPsHbsSQ23pHOaMUa6oHfoRrRH7AuwL2BrjWBfgD2JHdiDtQXwBlBJOpHJde7bKWrbtmGU/9/udY6ICZC/UrEjBYSb0MorcQ8llGwtdgYYleRqm0sMwLZtJNzdl/2nTcyGDQDya0RMAAXbdttG0g8ApO6Z2f9ic04lAdAkRcQE4PX/6//X/6//X/+//n/9/x/hAdC/IYOPg0TDROB3n198+dUnPwO0ZJr4c3Wc3D3LZuAvq62TbRl/+e/XTWGb+JjfbhrDYeIjf71kigjhw3//zX45Iohr/Ob71VJECBf67FVGGBc7tVKKTFxx7JMzjYvms0uRKVz4wz3KTOLaGUvkI4nrzw1ypXCP2h5WGbd57k5W4k6Le6OjiJs9tqYqcL8HN0ZHEXfMY1+yEnd9cFeYp3DfzE3RUcStn3vio3D3qiWJM9DAHakz0MKI/agz0MXajjqFPpZWo06hlbUYdQrNPNYiTqGdrJ2IU+joSugM9DS8DjwDbT2WgUeisclVyCI6y1yEKKG5xxqwAu21l6ASHa4ViCIeEqbRZOb4otDnGp4OotHJ0aXR6xqcknhKKtBua2hKdDxnlkLLj4kpiZ7L87LR9poWi+h7DktG5+VRpdD7GhQD3Y852Wi/NaUgBpgzYmCENSIZMzQHFMQUczw05jgeGoOM4UiYJGM0ImaZkwlMM+ZCYZzWVEQMNMaCx8TEY0IMVR6IMdYYBzHYefhJGS09CnE2iFEQD8p4/aRIU9CEEEMgR+QhDDmeFD8piCfF/0rQPBS340nxk6K+Df1y3wi/o2+Wq2fsQ3E9WtauqWPEnTRsj4bRN7BbMzDezSJxJwPr2auC99GqwZ0O3YtGcXCmbPgfbWrcaWEDo0nDFWgyGyvoHhV2kC0q3ElzC9wgNu60sIduT2ER2Z2eTWhvYxPdnMQqsjfNXejtNHZRrUncSXIbOjuNO02sI/uS3Ae3ZRp3GrjT5J0wcKcPdlItmTyUB3daeSgvHOrPS/lxKN8+LgV//O1LqUthHgriUnIOBe9LiTkUvJaCmmTtRGuC107IWk8K80FB6EFB7cMIw3hQENwGbetJYSwDpYG5C60NchfUZTwokDeh1EFsgsD5pNB7UPrAXAOJYwsoEWIJWiN6B1Q2V6BEQqyAzt6AlolaAMoEaX6jE8QHBZ5eQ2oPj1pRs2utQI2OYoGcXKkFT45yQYNrvaCxNRTX1CgZObSSDNDM5teXoZds5rwahzqX0tJxWiUdPKzWbtjEodal9KXUpfShDA61LqUvpXwYg9oHjD2FQ/2Fp3ko3hbs5BwKeClAXwrpScHUtiRdwdCQsgUcOzi+YOhGwlmOGWUNUF6kOWga0bB32ofwB2wbyiCg6MHQIsxYkDB5+lDAonxsm4Aa9RJOTx0KkFSObqFLuITdLN4JkC0ayzFMUrKE6dmKhWuYpFwztgHZaiWcn6RWYR0QpVTDfcboFPYBFYcCZmmU2MGOUSiWAMjQZ3oNwEh1Eps4T2vzrAJQzwhTWMcMyhL7APA8ejK1EYDO6khgK3XWcwLEGc0IrGac8ZwAcWQfmtsB6KwuPNhQndWCqRUBeBy8v8CaMk/dHBcFQB5xa4ll9VE39t4WgHXopgIrm5W39N4ZQFW6ncLiRtXNvDcHYB6+kRPrqyrdRMT+AHCl7uDEFmcmry5ijQBkpC7txDK7UpcV3iYAyoxrOrDTjAxdTmqpfu6I4JWwsNwREZdR2PCIMC9AsWI/d9j+YIlVp8PWhwnu2i/SIfsDSFh7y5b/UvsvBU0/I79K0whIf9hE3MFvDSAA6WcBfAOgpon//n/9//r/9f/r/9f/r///HyU="
           alt=""
           width="128"
           height="128"
-          referrerpolicy="no-referrer"
           decoding="async"
+          loading="eager"
         >
       </div>
 
