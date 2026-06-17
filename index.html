@@ -90,6 +90,7 @@
       object-fit: cover;
       border: 4px solid var(--text);
       border-radius: 50%;
+      overflow: hidden;
       background: var(--black);
     }
 
@@ -155,17 +156,23 @@
 
     .button-link.official:hover { background: #ffd83d; }
 
-    .button-link.social {
+    .button-link.social,
+    .button-link.website-bottom {
       gap: 12px;
       justify-content: flex-start;
       padding-inline: 16px 22px;
       text-align: left;
     }
 
-    .button-link.social .label {
+    .button-link.social .label,
+    .button-link.website-bottom .label {
       flex: 1;
       text-align: center;
       transform: translateX(-22px);
+    }
+
+    .button-link.website-bottom {
+      margin-top: 20px;
     }
 
     .icon-badge {
@@ -178,6 +185,11 @@
       border-radius: 15px;
       color: var(--black);
       background: var(--yellow);
+    }
+
+    .button-link.official .icon-badge {
+      color: var(--yellow);
+      background: var(--black);
     }
 
     .icon-badge svg {
@@ -218,15 +230,10 @@
   <main class="page">
     <section class="profile-card" aria-labelledby="brand-title">
       <div class="avatar-wrap">
-        <img
-          class="avatar"
-          src="data:image/webp;base64,UklGRpoFAABXRUJQVlA4TI4FAAAvqkFqAIcgEEjhACcQSOEGF/MfFRgAeAMAA0TYBkDbBgSj/39YxXbKHtH/CcCPk6SPsHbsSQ23pHOaMUa6oHfoRrRH7AuwL2BrjWBfgD2JHdiDtQXwBlBJOpHJde7bKWrbtmGU/9/udY6ICZC/UrEjBYSb0MorcQ8llGwtdgYYleRqm0sMwLZtJNzdl/2nTcyGDQDya0RMAAXbdttG0g8ApO6Z2f9ic04lAdAkRcQE4PX/6//X/6//X/+//n/9/x/hAdC/IYOPg0TDROB3n198+dUnPwO0ZJr4c3Wc3D3LZuAvq62TbRl/+e/XTWGb+JjfbhrDYeIjf71kigjhw3//zX45Iohr/Ob71VJECBf67FVGGBc7tVKKTFxx7JMzjYvms0uRKVz4wz3KTOLaGUvkI4nrzw1ypXCP2h5WGbd57k5W4k6Le6OjiJs9tqYqcL8HN0ZHEXfMY1+yEnd9cFeYp3DfzE3RUcStn3vio3D3qiWJM9DAHakz0MKI/agz0MXajjqFPpZWo06hlbUYdQrNPNYiTqGdrJ2IU+joSugM9DS8DjwDbT2WgUeisclVyCI6y1yEKKG5xxqwAu21l6ASHa4ViCIeEqbRZOb4otDnGp4OotHJ0aXR6xqcknhKKtBua2hKdDxnlkLLj4kpiZ7L87LR9poWi+h7DktG5+VRpdD7GhQD3Y852Wi/NaUgBpgzYmCENSIZMzQHFMQUczw05jgeGoOM4UiYJGM0ImaZkwlMM+ZCYZzWVEQMNMaCx8TEY0IMVR6IMdYYBzHYefhJGS09CnE2iFEQD8p4/aRIU9CEEEMgR+QhDDmeFD8piCfF/0rQPBS340nxk6K+Df1y3wi/o2+Wq2fsQ3E9WtauqWPEnTRsj4bRN7BbMzDezSJxJwPr2auC99GqwZ0O3YtGcXCmbPgfbWrcaWEDo0nDFWgyGyvoHhV2kC0q3ElzC9wgNu60sIduT2ER2Z2eTWhvYxPdnMQqsjfNXejtNHZRrUncSXIbOjuNO02sI/uS3Ae3ZRp3GrjT5J0wcKcPdlItmTyUB3daeSgvHOrPS/lxKN8+LgV//O1LqUthHgriUnIOBe9LiTkUvJaCmmTtRGuC107IWk8K80FB6EFB7cMIw3hQENwGbetJYSwDpYG5C60NchfUZTwokDeh1EFsgsD5pNB7UPrAXAOJYwsoEWIJWiN6B1Q2V6BEQqyAzt6AlolaAMoEaX6jE8QHBZ5eQ2oPj1pRs2utQI2OYoGcXKkFT45yQYNrvaCxNRTX1CgZObSSDNDM5teXoZds5rwahzqX0tJxWiUdPKzWbtjEodal9KXUpfShDA61LqUvpXwYg9oHjD2FQ/2Fp3ko3hbs5BwKeClAXwrpScHUtiRdwdCQsgUcOzi+YOhGwlmOGWUNUF6kOWga0bB32ofwB2wbyiCg6MHQIsxYkDB5+lDAonxsm4Aa9RJOTx0KkFSObqFLuITdLN4JkC0ayzFMUrKE6dmKhWuYpFwztgHZaiWcn6RWYR0QpVTDfcboFPYBFYcCZmmU2MGOUSiWAMjQZ3oNwEh1Eps4T2vzrAJQzwhTWMcMyhL7APA8ejK1EYDO6khgK3XWcwLEGc0IrGac8ZwAcWQfmtsB6KwuPNhQndWCqRUBeBy8v8CaMk/dHBcFQB5xa4ll9VE39t4WgHXopgIrm5W39N4ZQFW6ncLiRtXNvDcHYB6+kRPrqyrdRMT+AHCl7uDEFmcmry5ijQBkpC7txDK7UpcV3iYAyoxrOrDTjAxdTmqpfu6I4JWwsNwREZdR2PCIMC9AsWI/d9j+YIlVp8PWhwnu2i/SIfsDSFh7y5b/UvsvBU0/I79K0whIf9hE3MFvDSAA6WcBfAOgpon//n/9//r/9f/r/9f/r///HyU="
-          alt=""
-          width="128"
-          height="128"
-          decoding="async"
-          loading="eager"
-        >
+        <svg class="avatar" viewBox="0 0 428 426" width="128" height="128" aria-hidden="true" focusable="false">
+          <rect width="428" height="426" fill="#000000"/>
+          <path fill="#ffcc00" d="M 53 215 L 77 251 L 108 283 L 156 317 L 187 332 L 219 343 L 251 350 L 284 353 L 294 351 L 299 345 L 321 292 L 330 249 L 332 197 L 326 152 L 307 95 L 295 74 L 271 72 L 232 78 L 198 88 L 164 103 L 137 119 L 105 144 L 85 164 L 57 201 Z"/>
+        </svg>
       </div>
 
       <h1 class="brand-name" id="brand-title">ARMYTEK</h1>
@@ -235,11 +242,7 @@
         Manufacturer of high-tech flashlights, chargers and accessories. We focus on quality and reliability.
       </p>
 
-      <nav class="links" aria-label="ARMYTEK links">
-        <a class="button-link official" href="https://armytek.com/" target="_blank" rel="noopener noreferrer">
-          official website: armytek.com
-        </a>
-
+      <nav class="links" aria-label="ARMYTEK social links">
         <a class="button-link social" href="https://www.instagram.com/armytek/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <span class="icon-badge" aria-hidden="true">
             <svg viewBox="0 0 24 24" role="img">
@@ -278,6 +281,15 @@
       </nav>
 
       <p class="tagline">Built to exceed</p>
+
+      <a class="button-link official website-bottom" href="https://armytek.com/" target="_blank" rel="noopener noreferrer" aria-label="Official website">
+        <span class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/>
+          </svg>
+        </span>
+        <span class="label">official website: armytek.com</span>
+      </a>
     </section>
   </main>
 </body>
